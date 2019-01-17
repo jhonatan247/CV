@@ -17,11 +17,755 @@
         rel='stylesheet'>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/basic.css" />
-    <link rel="stylesheet" href="css/layout.css" />
-    <link rel="stylesheet" href="css/ionicons.css" />
-    <link rel="stylesheet" href="css/magnific-popup.css" />
-    <link rel="stylesheet" href="css/animate.css" />
+    <style>
+        html {
+            margin-right: 0 !important
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            border: none;
+            font-family: 'Roboto Mono';
+            font-size: 13px;
+            color: #363636;
+            background: #fff;
+            letter-spacing: 0;
+            font-weight: 400
+        }
+
+        body header,
+        body footer,
+        body .section {
+            opacity: 0;
+            visibility: hidden
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box
+        }
+
+        .clear {
+            clear: both
+        }
+
+        .container {
+            position: relative;
+            margin: 30px;
+            overflow: hidden;
+            background: #ffffff
+        }
+
+        @media (max-width:840px) {
+            .container {
+                margin: 15px
+            }
+        }
+
+        .container .line {
+            content: '';
+            position: fixed;
+            background: #087BF7;
+            z-index: 105
+        }
+
+        .container .line.top {
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 30px
+        }
+
+        @media (max-width:840px) {
+            .container .line.top {
+                height: 15px
+            }
+        }
+
+        .container .line.bottom {
+            left: 0;
+            top: auto;
+            bottom: 0;
+            width: 100%;
+            height: 30px
+        }
+
+        @media (max-width:840px) {
+            .container .line.bottom {
+                height: 15px
+            }
+        }
+
+        .container .line.left {
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 200%
+        }
+
+        @media (max-width:840px) {
+            .container .line.left {
+                width: 15px
+            }
+        }
+
+        .container .line.right {
+            left: auto;
+            right: 0;
+            top: 0;
+            width: 30px;
+            height: 200%
+        }
+
+        @media (max-width:840px) {
+            .container .line.right {
+                width: 15px
+            }
+        }
+
+        .wrapper {
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+            max-width: 1060px
+        }
+
+        p {
+            font-size: 13px;
+            line-height: 23px;
+            padding: 0;
+            margin: 30px 0
+        }
+
+        strong {
+            font-weight: 500
+        }
+
+        a {
+            color: #363636;
+            text-decoration: none;
+            opacity: 1;
+            outline: none
+        }
+
+        a.btn,
+        .btn {
+            display: inline-block;
+            vertical-align: middle;
+            height: 42px;
+            line-height: 40px;
+            text-align: center;
+            color: #363636;
+            font-size: 13px;
+            background: none;
+            border: 1px solid #dddddd;
+            position: relative;
+            overflow: hidden;
+            padding: 0 30px
+        }
+
+        a.btn.fill,
+        .btn.fill {
+            color: #ffffff;
+            background: #087BF7;
+            border: 1px solid #087BF7
+        }
+
+        .preloader {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            text-align: center
+        }
+
+        .preloader .load {
+            color: #087BF7;
+            font-size: 12px
+        }
+
+        .preloader .typed-load {
+            color: #087BF7;
+            font-size: 12px
+        }
+
+        ::-webkit-input-placeholder {
+            color: #999999
+        }
+
+        :-moz-placeholder {
+            color: #999999
+        }
+
+        ::-moz-placeholder {
+            color: #999999
+        }
+
+        :-ms-input-placeholder {
+            color: #999999
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            padding-left: 0px
+        }
+
+        li {
+            margin-bottom: 0px
+        }
+
+        .full-width {
+            max-width: 100% !important;
+            width: 100% !important
+        }
+
+        .centrize {
+            display: table !important;
+            table-layout: fixed !important;
+            height: 100% !important;
+            position: relative !important
+        }
+
+        .vertical-center {
+            display: table-cell !important;
+            vertical-align: middle !important
+        }
+
+        @media (min-width:580px) {
+            .glitch-effect {
+                position: relative
+            }
+
+            .glitch-effect:before,
+            .glitch-effect:after {
+                content: attr(data-text);
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background: #ffffff;
+                clip: rect(0, 0, 0, 0)
+            }
+
+            .glitch-effect:after {
+                left: 2px;
+                text-shadow: -1px 0 #087BF7;
+                animation: glitch-1 2s infinite linear alternate-reverse
+            }
+
+            .glitch-effect:before {
+                left: -2px;
+                text-shadow: 2px 0 #087BF7;
+                animation: glitch-2 2s infinite linear alternate-reverse
+            }
+        }
+
+        @keyframes glitch-1 {
+            0% {
+                clip: rect(20px, 920px, 51px, 0)
+            }
+
+            5% {
+                clip: rect(83px, 920px, 102px, 0)
+            }
+
+            10% {
+                clip: rect(83px, 920px, 105px, 0)
+            }
+
+            15% {
+                clip: rect(95px, 920px, 11px, 0)
+            }
+
+            20% {
+                clip: rect(105px, 920px, 56px, 0)
+            }
+
+            25% {
+                clip: rect(40px, 920px, 19px, 0)
+            }
+
+            30% {
+                clip: rect(56px, 920px, 97px, 0)
+            }
+
+            35% {
+                clip: rect(9px, 920px, 17px, 0)
+            }
+
+            40% {
+                clip: rect(103px, 920px, 53px, 0)
+            }
+
+            45% {
+                clip: rect(92px, 920px, 6px, 0)
+            }
+
+            50% {
+                clip: rect(69px, 920px, 46px, 0)
+            }
+
+            55% {
+                clip: rect(8px, 920px, 87px, 0)
+            }
+
+            60% {
+                clip: rect(12px, 920px, 15px, 0)
+            }
+
+            70% {
+                clip: rect(28px, 920px, 106px, 0)
+            }
+
+            80% {
+                clip: rect(98px, 920px, 63px, 0)
+            }
+
+            85% {
+                clip: rect(11px, 920px, 44px, 0)
+            }
+
+            95% {
+                clip: rect(23px, 920px, 84px, 0)
+            }
+
+            100% {
+                clip: rect(66px, 920px, 91px, 0)
+            }
+        }
+
+        @keyframes glitch-2 {
+            0% {
+                clip: rect(86px, 920px, 25px, 0)
+            }
+
+            5% {
+                clip: rect(30px, 920px, 17px, 0)
+            }
+
+            10% {
+                clip: rect(54px, 920px, 43px, 0)
+            }
+
+            15% {
+                clip: rect(10px, 920px, 86px, 0)
+            }
+
+            25% {
+                clip: rect(62px, 920px, 1px, 0)
+            }
+
+            30% {
+                clip: rect(61px, 920px, 24px, 0)
+            }
+
+            35% {
+                clip: rect(38px, 920px, 46px, 0)
+            }
+
+            40% {
+                clip: rect(115px, 920px, 8px, 0)
+            }
+
+            45% {
+                clip: rect(87px, 920px, 44px, 0)
+            }
+
+            50% {
+                clip: rect(6px, 920px, 65px, 0)
+            }
+
+            55% {
+                clip: rect(83px, 920px, 99px, 0)
+            }
+
+            65% {
+                clip: rect(25px, 920px, 71px, 0)
+            }
+
+            70% {
+                clip: rect(37px, 920px, 55px, 0)
+            }
+
+            75% {
+                clip: rect(115px, 920px, 18px, 0)
+            }
+
+            80% {
+                clip: rect(68px, 920px, 46px, 0)
+            }
+
+            90% {
+                clip: rect(47px, 920px, 31px, 0)
+            }
+
+            95% {
+                clip: rect(47px, 920px, 84px, 0)
+            }
+
+            100% {
+                clip: rect(93px, 920px, 53px, 0)
+            }
+        }
+
+        @keyframes mouse-anim {
+            0% {
+                top: 0px
+            }
+
+            50% {
+                top: 10px
+            }
+
+            100% {
+                top: 0px
+            }
+        }
+
+        @font-face {
+            font-family: "Ionicons";
+            src: url("../fonts/ionicons.eot?v=2.0.1");
+            src: url("../fonts/ionicons.eot?v=2.0.1#iefix") format("embedded-opentype"), url("../fonts/ionicons.ttf?v=2.0.1") format("truetype"), url("../fonts/ionicons.woff?v=2.0.1") format("woff"), url("../fonts/ionicons.svg?v=2.0.1#Ionicons") format("svg");
+            font-weight: normal;
+            font-style: normal
+        }
+
+        .ion,
+        .ion-android-mail:before,
+        .ion-ios-telephone:before,
+        .ion-mouse:before,
+        .ion-social-facebook:before,
+        .ion-social-github:before,
+        .ion-social-instagram:before,
+        .ion-social-linkedin:before,
+        .ion-social-twitter:before,
+        .ion-social-whatsapp:before {
+            display: inline-block;
+            font-family: "Ionicons";
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale
+        }
+
+        .ion-android-mail:before {
+            content: "\f2eb"
+        }
+
+        .ion-ios-telephone:before {
+            content: "\f4b9"
+        }
+
+        .ion-mouse:before {
+            content: "\f340"
+        }
+
+        .ion-social-facebook:before {
+            content: "\f231"
+        }
+
+        .ion-social-github:before {
+            content: "\f233"
+        }
+
+        .ion-social-instagram:before {
+            content: "\f351"
+        }
+
+        .ion-social-linkedin:before {
+            content: "\f239"
+        }
+
+        .ion-social-twitter:before {
+            content: "\f243"
+        }
+
+        .ion-social-whatsapp:before {
+            content: "\f4f0"
+        }
+
+        p {
+            text-align: justify
+        }
+
+        header {
+            position: fixed;
+            left: 0;
+            top: 30px;
+            width: 100%;
+            z-index: 100;
+            text-align: right;
+            background: #ffffff;
+            opacity: 1;
+            visibility: visible
+        }
+
+        @media (max-width:840px) {
+            header {
+                top: 15px
+            }
+        }
+
+        header .head-top {
+            padding: 30px 65px 15px 65px
+        }
+
+        header .head-top .menu-btn {
+            position: relative;
+            margin: 0 auto;
+            width: 26px;
+            height: 20px
+        }
+
+        header .head-top .menu-btn:before,
+        header .head-top .menu-btn:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #141414
+        }
+
+        header .head-top .menu-btn:after {
+            top: auto;
+            bottom: 0
+        }
+
+        header .head-top .menu-btn span {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #141414;
+            margin-top: -1px
+        }
+
+        @media (max-width:840px) {
+            header .head-top .menu-btn {
+                display: block
+            }
+        }
+
+        @media (max-width:840px) {
+            header .head-top .top-menu {
+                opacity: 0;
+                visibility: hidden;
+                height: 0px
+            }
+        }
+
+        header .head-top .top-menu ul li {
+            margin-left: 50px;
+            display: inline-block;
+            vertical-align: top
+        }
+
+        header .head-top .top-menu ul li a {
+            display: block;
+            margin-top: 12px
+        }
+
+        header .head-top .top-menu ul li a.btn {
+            margin-top: 0
+        }
+
+        .section {
+            position: relative;
+            padding: 0 80px 150px 80px;
+            z-index: 97;
+            opacity: 1;
+            visibility: visible
+        }
+
+        @media (max-width:960px) {
+            .section {
+                padding: 0 40px 120px 40px
+            }
+        }
+
+        @media (max-width:480px) {
+            .section {
+                padding: 0 20px 120px 20px
+            }
+        }
+
+        .section .content {
+            position: relative
+        }
+
+        .section.started {
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            position: relative
+        }
+
+        .section.started .started-content {
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+            position: relative
+        }
+
+        .section.started .started-content .h-title {
+            font-size: 68px;
+            font-family: 'Roboto Mono';
+            color: #141414;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin: 10px 0 5px 0
+        }
+
+        @media (max-width:840px) {
+            .section.started .started-content .h-title {
+                font-size: 52px;
+                padding: 0 20px
+            }
+        }
+
+        @media (max-width:480px) {
+            .section.started .started-content .h-title {
+                font-size: 42px
+            }
+        }
+
+        .section.started .started-content .h-subtitle {
+            font-size: 13px
+        }
+
+        .section.started .started-content .typed-bread {
+            font-size: 13px
+        }
+
+        .section.started .mouse_btn {
+            font-size: 24px;
+            color: #087BF7;
+            text-align: center;
+            position: absolute;
+            width: 20px;
+            height: 40px;
+            left: 50%;
+            bottom: 80px;
+            margin-left: -10px
+        }
+
+        .section.started .mouse_btn .ion {
+            position: relative;
+            top: 0px;
+            animation: mouse-anim 1s ease-out 0s infinite
+        }
+
+        @media (max-width:400px) {
+            .section.about {
+                text-align: center
+            }
+        }
+
+        @media (max-width:600px) {
+            .section.about .desc {
+                margin-left: 100px
+            }
+        }
+
+        @media (max-width:400px) {
+            .section.about .desc {
+                margin-left: 0
+            }
+        }
+
+        .info-list {
+            margin-bottom: 42px
+        }
+
+        .info-list ul li {
+            display: inline-block;
+            vertical-align: top;
+            width: 48%;
+            margin: 12px 0 0 0
+        }
+
+        @media (max-width:840px) {
+            .info-list ul li {
+                width: 48%
+            }
+        }
+
+        @media (max-width:580px) {
+            .info-list ul li {
+                width: 100%
+            }
+        }
+
+        .info-list ul li strong {
+            font-weight: 400;
+            color: #087BF7
+        }
+
+        footer {
+            position: fixed;
+            bottom: 25px;
+            left: 0;
+            padding: 15px 60px 30px 60px;
+            width: 100%;
+            background: #ffffff;
+            z-index: 100;
+            opacity: 1;
+            visibility: visible
+        }
+
+        @media (max-width:840px) {
+            footer {
+                bottom: 15px
+            }
+        }
+
+        footer .soc {
+            float: right
+        }
+
+        footer .soc a {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 12px
+        }
+
+        @media (max-width:840px) {
+            footer .soc {
+                float: none;
+                text-align: center
+            }
+
+            footer .soc a {
+                margin: 0 6px
+            }
+        }
+
+        footer .copy {
+            float: left;
+            padding-top: 2px;
+            font-size: 11px;
+            color: #999999
+        }
+
+        @media (max-width:840px) {
+            footer .copy {
+                display: none
+            }
+        }
+    </style>
 
     <!--[if lt IE 9]>
         <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
@@ -30,9 +774,9 @@
 
     <!-- Favicons -->
     <link rel="shortcut icon" href="images/favicons/favicon.ico">
-    <link rel="apple-touch-icon" href="images/favicons/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/favicons/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" href="images/favicons/apple-touch-icon.webp">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicons/apple-touch-icon-72x72.webp">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicons/apple-touch-icon-114x114.webp">
 
 </head>
 
@@ -93,7 +837,7 @@
                 <div class="content">
                     <div class="desc">
                         <p style="vertical-align: text-top;">
-                            <img src="images/man.jpg" alt="" style="width: 120px; margin-right: 10px;" align="left" />
+                            <img src="images/man.webp" alt="" style="width: 120px; margin-right: 10px;" align="left" />
                             Hi, my name is Jhonatan Torres, I'm studying Systems Engineering and
                             Computing. I am a software programming technician and have experience in the development of
                             mobile, web and desktop applications. <br /><br />
@@ -105,7 +849,8 @@
                                 <li><strong>Name</strong><br />Jhonatan Torres Forero</li>
                                 <li><strong>Age</strong><br />19 years old</li>
                                 <li><strong>Current occupation</strong><br />Software Engineer at <a href="https://www.siigo.com/"
-                                        style="font-weight: bold; text-decoration: underline" target="_blank">Siigo S.A.</a></li>
+                                        style="font-weight: bold; text-decoration: underline" target="_blank">Siigo
+                                        S.A.</a></li>
                                 <li><strong>Hometown</strong><br />Bogotá, Colombia</li>
                                 <li><strong>City ​​of residence</strong><br /><a href="https://goo.gl/9QWxNN" target="_blank"
                                         style="font-weight: bold; text-decoration: underline">Bogotá, Colombia</a></li>
@@ -154,8 +899,9 @@
                                 </div>
                                 <div class="resume-item">
                                     <div class="date">In progress</div>
-                                    <div class="name">Software developer - <a href="https://www.fundacionrappi.com/" target="_blank"
-                                            style="font-weight: bold; text-decoration: underline">Rappi foundation</a></div>
+                                    <div class="name">Software developer - <a href="https://www.fundacionrappi.com/"
+                                            target="_blank" style="font-weight: bold; text-decoration: underline">Rappi
+                                            foundation</a></div>
                                     <p>
                                         This program is based on the teaching of the techniques of clean code and
                                         teamwork for the development of projects in large companies.
@@ -228,7 +974,7 @@
                                     <div class="name">Software Engineer at <a href="https://www.siigo.com/" target="_blank"
                                             style="font-weight: bold; text-decoration: underline">Siigo.com</a></div>
                                     <p>
-                                        Siigo is a large Colombian software company, responsible for the development of 
+                                        Siigo is a large Colombian software company, responsible for the development of
                                         accounting software to improve the lives of accountants and entrepreneurs.
                                     </p>
                                 </div>
@@ -288,7 +1034,7 @@
                     <div class="skills">
                         <h4>Soft skills</h4>
                         <ul>
-                            
+
                             <li>
                                 <div style="max-width:90%;" class="name">SCRUM</div>
                                 <div class="progress">
@@ -523,15 +1269,22 @@
 
         <!-- jQuery Scripts -->
         <script src="js/jquery.min.js"></script>
-        <script src="js/jquery.validate.js"></script>
-        <script src="js/typed.js"></script>
-        <script src="js/magnific-popup.js"></script>
-        <script src="js/masonry.pkgd.js"></script>
-        <script src="js/imagesloaded.pkgd.js"></script>
-        <script src="js/masonry-filter.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/typed.min.js"></script>
+        <script src="js/magnific-popup.min.js"></script>
+        <script src="js/masonry.pkgd.min.js"></script>
+        <script src="js/imagesloaded.pkgd.min.js"></script>
+        <script src="js/masonry-filter.min.js"></script>
 
         <!-- Main Scripts -->
-        <script src="js/scripts.js"></script>
+        <script src="js/scripts.min.js"></script>
+
+
+        <link rel="stylesheet" href="css/basic.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/ionicons.css" />
+        <link rel="stylesheet" href="css/magnific-popup.css" />
+        <link rel="stylesheet" href="css/animate.css" />
 
 </body>
 
